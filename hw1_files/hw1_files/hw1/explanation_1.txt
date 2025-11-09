@@ -1,0 +1,10 @@
+user1: 0.0 seconds
+user2: 36.5 seconds (salt was before L33T)
+user3: 0.125 seconds
+user4: 1.25 seconds
+user5: 0.0 seconds
+user6: 0.0 seconds
+
+The first thing I did was select hash method based on length of the hashed password since hashes give fixed length hashed results. An issue I ran into while doing this was that while there were two passwords with the length of 56, there were also two hashes that gave that length. Once I was told that, it solved that problem. After checking the password directly from the dictionary, I performed the transformations on each entry in the dictionary, one entry at a time, going through every salt or L33T combination. I did this as the common passwords appeared to come earlier. I ran into an issue with L33t because I was using i->1 and not i->!. Once I fixed that it solved it quickly.
+
+I am using the time library for a monotonic clock to determine how long it took for each password to be cracked. I am using the sys library so I can call the program from the command line with arguments.

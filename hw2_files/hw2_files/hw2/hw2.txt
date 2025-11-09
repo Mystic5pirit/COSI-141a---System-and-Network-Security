@@ -1,0 +1,18 @@
+1. ip.src == 198.105.254.25 ; 141
+2. arp ; Apple_01:a5:c9
+3. http.request.method == "GET" ; 176-5516059-0295403
+4. dns.flags.response == 0 and dns.qry.name contains ".edu" ; www.map.wisc.edu
+5. ip.src == 192.168.0.100 and ip.dst == 207.171.162.173 and http.request.method == "GET" THEN I REPLACED %20 WITH A SPACE; adventures in Stochastic Processes
+6. ip.dst_host == 50.93.210.4 and http.request.method == "GET" and http contains "101.jpg" THEN I FOUND [Response in frame 3011] AND FILTERED frame.number == 3011; INCLUDED IN ZIP
+7. pop ; cs155@dummymail.com
+8. pop ; Whitehat
+9. pop ; 5 messages
+
+11. tcpdump -n -r trace1.pcap src host 131.253.40.84
+12. tcpdump -n -r trace1.pcap dst port 80
+13. tcpdump -n -r trace1.pcap arp
+14. tcpdump -n -r trace1.pcap dst host 74.125.225.81 and dst port 443 
+15. nmap -sV scanme.nmap.org ; 22/tcp ssh OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0), 80/tcp http Apache httpd 2.4.7 ((Ubuntu)), 9929/tcp nping-echo Nping echo, 31337/tcp tcpwrapped
+16. nmap -sU scanme.nmap.org
+17. nmap -O scanme.nmap.org ; Linux
+18. nmap -sV --script vuln scanme.nmap.org ; Slowloris DOS attack. It causes Denial of Service by keeping open as many connections as possible for as long as possible, starving the http server's resources.
