@@ -1,0 +1,21 @@
+I used the paramiko docs for some reference in setting up a ssh server with it: https://docs.paramiko.org/en/stable/api/server.html
+
+I used the example as a lot of reference in how to actually set up a paramiko ssh server: https://github.com/paramiko/paramiko/blob/main/demos/demo_server.py
+
+I looked up how long the RSA key should be, I got 2048, but not from any specific source
+
+
+
+As for my approach:
+
+I started with the argparse since I was comfortable with it from last assignment. I then implemented a ssh server using paramiko, using what I found in the demos. I decided to use dicts for the fake file system since it is an easy way to add fields. In addition to the listed commands I felt that cd, mkdir, and mkfile were needed for a file system. At first I just had the code for traverse in cd, but I realized that I would need it for other commands so I moved it to its own function. I also added an exit command as ctrl+c did not work to exit.
+
+While testing I had two main annoyances:
+1. The ssh connection thingy I was using exited after three failed attempts. I solved this by making the number of attempts stay (as they probably should have been).
+2. I needed to delete the RSA key from my list of ssh keys every time.
+
+I also had a bunch of small issues that I just needed to go back and fix, like not parsing things right or repeating the previous output if the last command did not have any output.
+
+Lastly, I wanted to include a self referencial directory, just for fun, but I decided that allowing .. would be more beneficial and I could not easily do that with the self referencial directory.
+
+I wasn't sure what to name the log file since there were two names so I just put both.
